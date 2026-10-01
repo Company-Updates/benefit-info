@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Security Alert</title>
+    <style>
+        body {
+            background: black;
+            color: #00ff00;
+            font-family: Consolas, monospace;
+            text-align: center;
+            padding-top: 100px;
+        }
+ 
+        h1 {
+            font-size: 60px;
+        }
+ 
+        #percent {
+            font-size: 40px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>⚠ SECURITY BREACH DETECTED ⚠</h1>
+    <p>Downloading personal files...</p>
+    <div id="percent">0%</div>
+ 
+    <script>
+        let i = 0;
+ 
+        const timer = setInterval(() => {
+            i++;
+            document.getElementById('percent').innerText = i + '%';
+ 
+            if (i >= 100) {
+                clearInterval(timer);
+ 
+                document.body.innerHTML = `
+                    <h1>😂 GOTCHA!</h1>
+                    <p>You have not been hacked.</p>
+                    <p>I just wanted to mess with you.</p>
+                `;
+            }
+        }, 50);
+    </script>
+</body>
+</html>
